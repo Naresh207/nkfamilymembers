@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK Family Members</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #number {
+            font-size: 100px;
+            margin: 0 10px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="number"></div>
+        <div class="profile" id="profile">
+            <img src="" alt="Profile Picture">
+            <span id="name"></span>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const numbers = [
+                { number: '1', name: 'Naresh', photo: 'naresh.jpg' },
+                { number: '2', name: 'Chitra', photo: 'chitra.jpg' },
+                { number: '3', name: 'Venkat', photo: 'venkat.jpg' },
+                { number: '4', name: 'Maha', photo: 'maha.jpg' },
+                { number: '5', name: 'Prakash', photo: 'prakash.jpg' }
+                // Add more numbers, names, and photos as needed
+            ];
+            const numberContainer = document.getElementById('number');
+            const profileContainer = document.getElementById('profile');
+            const profileImage = profileContainer.querySelector('img');
+            const profileName = profileContainer.querySelector('span');
+
+            let index = 0;
+            
+            function displayNumber() {
+                numberContainer.textContent = numbers[index].number;
+            }
+
+            function displayProfile() {
+                const currentProfile = numbers[index];
+                profileImage.src = currentProfile.photo;
+                profileName.textContent = currentProfile.name;
+            }
+            
+            function speakNumber(number) {
+                // Speak the number using ResponsiveVoice.js
+                responsiveVoice.speak(number, "US English Female");
+            }
+            
+            function nextNumber() {
+                index = (index + 1) % numbers.length;
+                displayNumber();
+                speakNumber(numbers[index].number);
+                displayProfile();
+            }
+            
+            // Initial display
+            displayNumber();
+            speakNumber(numbers[index].number);
+            displayProfile();
+            
+            // Set interval to change number every 5000ms (5 seconds)
+            setInterval(nextNumber, 5000);
+        });
+    </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=94pRi2HF"></script>
+</body>
+</html>
