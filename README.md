@@ -1,33 +1,36 @@
-# Number Games
+Nk Family Members
+This web application showcases profiles of NK family members, displaying their names along with profile pictures. The names are spoken aloud using ResponsiveVoice.js.
 
-This is a simple web application that displays numbers from 1 to 5 along with corresponding names and profile pictures. The numbers are spoken aloud using ResponsiveVoice.js.
+Preview
 
-## Preview
+Getting Started
+Prerequisites
+Ensure you have a modern web browser installed.
 
-![Number Games Preview](preview.png)
+Installation
+No installation required. Simply open the index.html file in your web browser.
 
-## Getting Started
-
-### Prerequisites
-
-Make sure you have a modern web browser installed.
-
-### Installation
-
-No installation required. Simply open the `index.html` file in your web browser.
-
-## Usage
-
-- The webpage will display numbers from 1 to 5 along with the names Naresh, Chitra, Venkat, Maha, and Prakash, respectively.
-- Every 5 seconds, the number and corresponding name will change, along with the spoken pronunciation.
-
-## Built With
-
-- HTML
-- CSS
-- JavaScript
-- ResponsiveVoice.js
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Usage
+The webpage displays profiles of NK family members.
+Every 5 seconds, the profile information changes to the next family member.
+The name of each family member is spoken aloud.
+Customization
+To add more family members, update the profiles array in the JavaScript code with their names and corresponding photo filenames.
+javascript
+Copy code
+const profiles = [
+    { name: 'Naresh', photo: 'naresh.jpg' },
+    { name: 'Meghasree', photo: 'meghasree.jpg' },
+    { name: 'Chitra', photo: 'chitra.jpg' },
+    { name: 'Venkat', photo: 'venkat.jpg' },
+    { name: 'Maha', photo: 'maha.jpg' },
+    { name: 'Prakash', photo: 'prakash.jpg' }
+    // Add more names and photos as needed
+];
+Built With
+HTML
+CSS
+JavaScript
+ResponsiveVoice.js
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
